@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
+import Gravatar from 'react-gravatar';
 import {
   Segment,
   Container,
   Header,
+  Button,
+  Icon
 } from "semantic-ui-react";
 
 class App extends Component {
@@ -13,27 +15,40 @@ class App extends Component {
     return (
       <Segment
         textAlign='center'
-        style={{ minHeight: 700, padding: '1em 0em' }}
+        style={{ padding: '10em 0em' }}
         vertical
       >
         <Container text>
-          <Gravatar email="sergigram@gmail.com" size={100} rating="pg" default="monsterid" className="CustomAvatar-image" />
-          <Header as='h3' style={{ fontSize: '2em' }}>Sergi Gracia</Header>
-          <p style={{ fontSize: '1.33em' }}>
-            We can give your company superpowers to do things that they never thought possible. Let us delight
-              </p>
-          <p style={{ fontSize: '1.33em' }}>
-            I'm Sergi Gracia a Catalan developer currently living in Barcelona.
-              </p>
-          <p style={{ fontSize: '1.33em' }}>
-            Former iOS Developer at BlooSee, Redbooth, Wallapop and other companies I'm not allowed to <strike>name</strike>.
-              </p>
-          <p style={{ fontSize: '1.33em' }}>
-            Currently building Mobile, TV and Watch experiences at <a class="color3" href="http://caramba.io">caramba.io</a>
-          </p>
-          <p style={{ fontSize: '1.33em' }}>
-            Contact me at <a class="color4" href="mailto:sergi@caramba.io">sergi@caramba.io</a>
-          </p>
+          <Gravatar email="sergigram@gmail.com" size={200} rating="pg" default="monsterid" className="gravatar-image" />
+
+          <Header as='h1' style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: 40, color: '#DDD'}}>Sergi Gracia</Header>
+
+          <p>I'm Sergi Gracia a software engineer currently living in Barcelona.</p>
+          <p>Former iOS Developer at BlooSee, Redbooth, Wallapop and other companies I'm not allowed to <strike>name</strike>.</p>
+          <p>Currently helping startups to bring ideas to life at <a href="http://caramba.io">caramba.io</a></p>
+
+          <Button primary size='massive' animated='vertical' style={{marginTop: 20}} href='mailto: sergi@caramba.io'>
+            <Button.Content visible>Contact Me</Button.Content>
+            <Button.Content hidden>
+              <Icon name='mail'/>              
+            </Button.Content>
+          </Button>
+
+          <Container style={{ marginTop: 80 }}>
+            <Button color='grey'>
+              <Icon name='github'/>Github
+            </Button>        
+            <Button color='twitter'>
+              <Icon name='twitter'/>Twitter
+            </Button>        
+            <Button color='linkedin'>
+              <Icon name='linkedin'/>LinkedIn
+            </Button>
+            <Button color='green'>
+              <Icon name='medium'/>medium
+            </Button>
+          </Container>
+
         </Container>
       </Segment>
     );
