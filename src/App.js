@@ -11,6 +11,10 @@ import {
 } from "semantic-ui-react";
 
 class App extends Component {
+
+  redirect(to) {
+    window.open(to, '_blank');
+  }
   render() {
     return (
       <Segment
@@ -35,16 +39,16 @@ class App extends Component {
           </Button>
 
           <Container style={{ marginTop: 80 }}>
-            <Button color='grey'>
+            <Button color='grey' onClick={() => this.redirect('https://github.com/sergigracia')}>
               <Icon name='github'/>Github
             </Button>        
-            <Button color='twitter'>
+            <Button color='twitter' onClick={() => this.redirect('https://twitter.com/sergigracia')}>
               <Icon name='twitter'/>Twitter
             </Button>        
-            <Button color='linkedin'>
+            <Button color='linkedin' onClick={() => this.redirect('https://linkedin.com/in/sergigracia')}>
               <Icon name='linkedin'/>LinkedIn
             </Button>
-            <Button color='green'>
+            <Button color='green' onClick={() => this.redirect('https://medium.com/@sergigracia')}>
               <Icon name='medium'/>medium
             </Button>
           </Container>
